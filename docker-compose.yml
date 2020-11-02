@@ -1,0 +1,18 @@
+version: '3'
+services:
+  myapp:
+    build: 
+      context: .
+      dockerfile: ./nginx/Dockerfile
+    ports:
+       - 80:80
+    links:
+       - myphp
+  myphp:
+    build:
+      context: .
+      dockerfile: ./php/Dockerfile
+    ports:
+       - 9000      
+
+
